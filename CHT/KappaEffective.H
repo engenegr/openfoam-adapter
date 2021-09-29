@@ -1,7 +1,7 @@
 #ifndef CHT_COMMON_KAPPAEFF_H
 #define CHT_COMMON_KAPPAEFF_H
 
-#include "fluidThermoMomentumTransportModel.H"
+#include "dynamicMomentumTransportModel.H"
 #include "kinematicMomentumTransportModel.H"
 #include "thermophysicalTransportModel.H"
 

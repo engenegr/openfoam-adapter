@@ -1,12 +1,12 @@
 EXE_INC = \
     -I$(LIB_SRC)/finiteVolume/lnInclude \
     -I$(LIB_SRC)/meshTools/lnInclude \
-    -I$(LIB_SRC)/transportModels/ \
     -I$(LIB_SRC)/thermophysicalModels/basic/lnInclude \
-    -I$(LIB_SRC)/ThermophysicalTransportModels/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/specie/lnInclude \
     -I$(LIB_SRC)/MomentumTransportModels/momentumTransportModels/lnInclude \
     -I$(LIB_SRC)/MomentumTransportModels/compressible/lnInclude \
     -I$(LIB_SRC)/MomentumTransportModels/incompressible/lnInclude \
+    -I$(LIB_SRC)/ThermophysicalTransportModels/lnInclude \
     -I$(LIB_SRC)/transportModels/lnInclude \
     -I$(LIB_SRC)/triSurface/lnInclude \
     $(ADAPTER_PKG_CONFIG_CFLAGS) \
@@ -17,8 +17,9 @@ LIB_LIBS = \
     -lfiniteVolume \
     -lmeshTools \
     -lthermophysicalTransportModels \
-    -lfluidThermoMomentumTransportModels \
+    -lcompressibleMomentumTransportModels \
     -lincompressibleMomentumTransportModels \
-    -limmiscibleIncompressibleTwoPhaseMixture \
+    -lfluidThermophysicalModels \
+    -lmomentumTransportModels \
     $(ADAPTER_PKG_CONFIG_LIBS) \
     -lprecice
