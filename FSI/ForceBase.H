@@ -11,7 +11,8 @@
 #include "vectorField.H"
 
 #if (OpenFOAM_VENDOR == OpenFOAM_VENDOR_dotORG) && (OpenFOAM_VERSION_MAJOR >= 8)
-    #include "fluidThermoMomentumTransportModel.H"
+    #include "dynamicMomentumTransportModel.H"
+    #include "fluidThermophysicalTransportModel.H"
     #include "kinematicMomentumTransportModel.H"
 #else
     #include "immiscibleIncompressibleTwoPhaseMixture.H"

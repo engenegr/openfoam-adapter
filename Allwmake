@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 cd ${0%/*} || exit 1    # Run from this directory
 
 ## detect openfoam vendor
@@ -55,20 +55,25 @@ if [ $OpenFOAM_VENDOR -eq 2 ] && [ $OpenFOAM_VERSION_MAJOR -ge 8 ] ; then
 # OpenFOAM.org >= 8
 #
 export ADAPTER_EXE_INC_FLAGS=' \
--I$(LIB_SRC)/ThermophysicalTransportModels/lnInclude \
+-I$(LIB_SRC)/thermophysicalModels/basic/lnInclude \
+-I$(LIB_SRC)/thermophysicalModels/specie/lnInclude \
 -I$(LIB_SRC)/MomentumTransportModels/momentumTransportModels/lnInclude \
 -I$(LIB_SRC)/MomentumTransportModels/compressible/lnInclude \
 -I$(LIB_SRC)/MomentumTransportModels/incompressible/lnInclude \
+-I$(LIB_SRC)/ThermophysicalTransportModels/lnInclude \
 -I$(LIB_SRC)/transportModels/lnInclude \
 '
+
 export ADAPTER_BC_EXE_INC_FLAGS=' \
 -I$(LIB_SRC)/ThermophysicalTransportModels/lnInclude \
 -I$(LIB_SRC)/radiationModels/lnInclude \
 '
 export ADAPTER_LIB_LIBS_FLAGS=' \
 -lthermophysicalTransportModels \
--lfluidThermoMomentumTransportModels \
+-lcompressibleMomentumTransportModels \
 -lincompressibleMomentumTransportModels \
+-lfluidThermophysicalModels \
+-lmomentumTransportModels \
 '
 export ADAPTER_BC_LIB_LIBS_FLAGS=' \
 -lthermophysicalTransportModels \
