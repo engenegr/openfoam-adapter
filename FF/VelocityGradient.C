@@ -22,7 +22,7 @@ void preciceAdapter::FF::VelocityGradient::write(double* buffer, bool meshConnec
         int patchID = patchIDs_.at(j);
 
         // Get the velocity gradient boundary patch
-        vectorField gradientPatch =
+        const vectorField& gradientPatch =
             refCast<fixedValueFvPatchVectorField>(
                 U_->boundaryFieldRef()[patchID])
                 .snGrad();
