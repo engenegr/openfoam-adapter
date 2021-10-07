@@ -4,7 +4,7 @@ set -e -u
 ########## CONFIGURATION - You may want to change these ########################
 
 # Optional: Preprocessor flags ("-DADAPTER_DEBUG_MODE" enables debug messages)
-ADAPTER_PREP_FLAGS=""
+PRECICE_BUILD_FLAGS=""
 
 # Build command and options
 # In order to compile with multiple threads, add e.g. "-j 4".
@@ -14,7 +14,7 @@ adapter_build_command(){
 }
 
 # Where should the adapter be built? Default: "${FOAM_USER_LIBBIN}"
-ADAPTER_TARGET_DIR="${FOAM_USER_LIBBIN:-}"
+FOAM_LIBBIN="${FOAM_USER_LIBBIN:-}"
 
 # More information for compatibility with OpenFOAM
 DOC_COMPATIBILITY="https://www.precice.org/adapter-openfoam-support.html"
@@ -28,15 +28,6 @@ log() {
 
 # Information header
 log "Building the OpenFOAM-preCICE adapter..."
-
-# Export the environment variables
-export ADAPTER_PREP_FLAGS
-export ADAPTER_TARGET_DIR
-ADAPTER_PKG_CONFIG_CFLAGS="$(pkg-config --silence-errors --cflags libprecice)"
-export ADAPTER_PKG_CONFIG_CFLAGS
-ADAPTER_PKG_CONFIG_LIBS="$(pkg-config --silence-errors --libs libprecice)"
-export ADAPTER_PKG_CONFIG_LIBS
-
 # Check if an OpenFOAM environment is available
 log ""
 log "Current OpenFOAM environment:"
@@ -62,14 +53,19 @@ if [ "${WM_PROJECT:-}" = "foam" ]; then
     exit 1
 fi
 
-log ""
-log "The adapter will be built into ${ADAPTER_TARGET_DIR}"
-log "Additional preprocessor/compiler options: ${ADAPTER_PREP_FLAGS}"
+if [ -z "${PRECICE_PREFIX:-}" ]; then
+    log ""
+    log "=== WARNING: It looks like PRECICE_PREFIX specified. ==="
+    export PRECICE_PREFIX = "/usr/lib/"
+    log ""
+    log "Will proceed with default locaton $PRECICE_PREFIX"
+    log "See also ${DOC_COMPATIBILITY}"
+fi
 
 log ""
-log "If not already known by the system, preCICE may be located using:"
-log "  pkg-config --cflags libprecice  = ${ADAPTER_PKG_CONFIG_CFLAGS}"
-log "  pkg-config --libs libprecice    = ${ADAPTER_PKG_CONFIG_LIBS}"
+log "The adapter will be built into ${FOAM_LIBBIN}"
+log "preCICE prefix dir ${PRECICE_PREFIX}"
+log "preCICE build flags ${PRECICE_BUILD_FLAGS}"
 
 # Run wmake (build the adapter) and check the exit code
 log ""
@@ -84,12 +80,13 @@ if ! adapter_build_command 2>&1 | tee wmake.log ||
     exit 1
 else
     ADAPTER_WMAKE_UNDEFINED_SYMBOLS=$(grep -c -E "undefined|not defined" wmake.log) || echo "Everything looks fine in wmake.log."
-    ldd -r "${ADAPTER_TARGET_DIR}/libpreciceAdapterFunctionObject.so" >ldd.log 2>&1
+    ldd -r "${FOAM_LIBBIN}/libpreciceAdapterFunctionObject.so" >ldd.log 2>&1
     ADAPTER_LD_UNDEFINED_SYMBOLS=$(grep -c -E "undefined|not defined" ldd.log) || echo "Everything looks fine in ldd.log."
     if [ "${ADAPTER_WMAKE_UNDEFINED_SYMBOLS}" -gt 0 ] || [ "${ADAPTER_LD_UNDEFINED_SYMBOLS}" -gt 0 ]; then
         log "=== ERROR: Building completed with linking problems: there were undefined symbols. ==="
         log "Possible causes:"
-        log "- Is preCICE discoverable at runtime? Check the content of ADAPTER_PKG_CONFIG_LIBS above."
+        log "- Is preCICE discoverable at runtime?"
+        log "- Create symbolic links to preCICE libraries with ln -s \$PRECICE_PREFIX/lib/libprecice.so.2 /usr/lib/libprecice.so.2"
         log "See wmake.log and ldd.log for more details."
     else
         log "=== OK: Building completed successfully! ==="
