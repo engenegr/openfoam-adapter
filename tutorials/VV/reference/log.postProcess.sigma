@@ -1,0 +1,70 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : dev-28745eca4bfb
+Exec   : postProcess -func components(sigma)
+Date   : Oct 07 2021
+Time   : 17:05:07
+Host   : "e7270"
+PID    : 1381829
+I/O    : uncollated
+Case   : /home/ilya/Code/Cpp/openfoam-adapter/tutorials/VV/reference
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Time = 0
+
+Reading fields:
+
+Executing functionObjects
+--> FOAM Warning :     functionObjects::components components(sigma) cannot find required object sigma
+--> FOAM Warning :     functionObjects::components components(sigma) failed to execute.
+
+Time = 20
+
+Reading fields:
+    volSymmTensorFields: sigma
+
+Executing functionObjects
+
+Time = 40
+
+Reading fields:
+    volSymmTensorFields: sigma
+
+Executing functionObjects
+
+Time = 60
+
+Reading fields:
+    volSymmTensorFields: sigma
+
+Executing functionObjects
+
+Time = 80
+
+Reading fields:
+    volSymmTensorFields: sigma
+
+Executing functionObjects
+
+Time = 100
+
+Reading fields:
+    volSymmTensorFields: sigma
+
+Executing functionObjects
+
+End
+

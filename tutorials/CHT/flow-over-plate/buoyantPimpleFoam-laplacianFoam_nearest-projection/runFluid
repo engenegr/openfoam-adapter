@@ -2,7 +2,7 @@
 
 # Fluid participant
 
-# Run this script in one terminal and the "runSolid" script in another terminal.
+# Run this script in one terminal and the "runStress" script in another terminal.
 # These scripts present how the two participants would be started manually.
 # Alternatively, you may execute the "Allrun" script in one terminal.
 

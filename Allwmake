@@ -4,7 +4,7 @@ set -e -u
 ########## CONFIGURATION - You may want to change these ########################
 
 # Optional: Preprocessor flags ("-DADAPTER_DEBUG_MODE" enables debug messages)
-PRECICE_BUILD_FLAGS=""
+PRECICE_BUILD_FLAGS="-DADAPTER_DEBUG_MODE"
 
 # Build command and options
 # In order to compile with multiple threads, add e.g. "-j 4".

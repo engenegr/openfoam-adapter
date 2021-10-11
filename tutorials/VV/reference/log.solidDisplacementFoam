@@ -1,0 +1,747 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : dev-28745eca4bfb
+Exec   : solidDisplacementFoam
+Date   : Oct 07 2021
+Time   : 17:05:00
+Host   : "e7270"
+PID    : 1381818
+I/O    : uncollated
+Case   : /home/ilya/Code/Cpp/openfoam-adapter/tutorials/VV/reference
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading thermophysical properties
+
+Calculating Lame's coefficients
+
+Reading field D
+
+Calculating stress field sigmaD
+
+Calculating explicit part of div(sigma) divSigmaExp
+
+No fvModels present
+No fvConstraints present
+
+Calculating displacement field
+
+Iteration: 1
+
+GAMG:  Solving for T, Initial residual = 0.560529, Final residual = 0.18413, No Iterations 1
+GAMG:  Solving for Dx, Initial residual = 1, Final residual = 0.722319, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 1, Final residual = 0.674659, No Iterations 1
+ExecutionTime = 0.01 s  ClockTime = 0 s
+
+Iteration: 2
+
+GAMG:  Solving for T, Initial residual = 0.370134, Final residual = 0.0842533, No Iterations 1
+GAMG:  Solving for Dx, Initial residual = 0.0453349, Final residual = 0.0100164, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 0.0486422, Final residual = 0.0112272, No Iterations 1
+ExecutionTime = 0.01 s  ClockTime = 0 s
+
+Iteration: 3
+
+GAMG:  Solving for T, Initial residual = 0.132184, Final residual = 0.0792282, No Iterations 1
+GAMG:  Solving for Dx, Initial residual = 0.0122265, Final residual = 0.00513351, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 0.0147313, Final residual = 0.00512007, No Iterations 1
+ExecutionTime = 0.01 s  ClockTime = 0 s
+
+Iteration: 4
+
+GAMG:  Solving for T, Initial residual = 0.118644, Final residual = 0.0628531, No Iterations 1
+GAMG:  Solving for Dx, Initial residual = 0.00836605, Final residual = 0.00196315, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 0.00865488, Final residual = 0.00194346, No Iterations 1
+ExecutionTime = 0.01 s  ClockTime = 0 s
+
+Iteration: 5
+
+GAMG:  Solving for T, Initial residual = 0.109516, Final residual = 0.0602184, No Iterations 1
+GAMG:  Solving for Dx, Initial residual = 0.00350193, Final residual = 0.000853181, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 0.00379439, Final residual = 0.00106529, No Iterations 1
+ExecutionTime = 0.01 s  ClockTime = 0 s
+
+Iteration: 6
+
+GAMG:  Solving for T, Initial residual = 0.0848708, Final residual = 0.0567698, No Iterations 1
+GAMG:  Solving for Dx, Initial residual = 0.00207764, Final residual = 0.000491453, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 0.00235335, Final residual = 0.000618609, No Iterations 1
+ExecutionTime = 0.01 s  ClockTime = 0 s
+
+Iteration: 7
+
+GAMG:  Solving for T, Initial residual = 0.0783021, Final residual = 0.0498286, No Iterations 1
+GAMG:  Solving for Dx, Initial residual = 0.00134065, Final residual = 0.000315675, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 0.00133072, Final residual = 0.000344812, No Iterations 1
+ExecutionTime = 0.02 s  ClockTime = 0 s
+
+Iteration: 8
+
+GAMG:  Solving for T, Initial residual = 0.064257, Final residual = 0.0532129, No Iterations 1
+GAMG:  Solving for Dx, Initial residual = 0.0010271, Final residual = 0.000222723, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 0.00104252, Final residual = 0.000223448, No Iterations 1
+ExecutionTime = 0.02 s  ClockTime = 0 s
+
+Iteration: 9
+
+GAMG:  Solving for T, Initial residual = 0.0647343, Final residual = 0.0492754, No Iterations 1
+GAMG:  Solving for Dx, Initial residual = 0.000700288, Final residual = 0.000150804, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 0.000624834, Final residual = 0.000152938, No Iterations 1
+ExecutionTime = 0.02 s  ClockTime = 0 s
+
+Iteration: 10
+
+GAMG:  Solving for T, Initial residual = 0.0623978, Final residual = 0.0479084, No Iterations 1
+GAMG:  Solving for Dx, Initial residual = 0.000541982, Final residual = 0.000116811, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 0.000441038, Final residual = 0.000110021, No Iterations 1
+ExecutionTime = 0.02 s  ClockTime = 0 s
+
+Iteration: 11
+
+GAMG:  Solving for T, Initial residual = 0.0564149, Final residual = 0.0479982, No Iterations 1
+GAMG:  Solving for Dx, Initial residual = 0.000415289, Final residual = 9.1887e-05, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 0.000323988, Final residual = 7.63501e-05, No Iterations 1
+ExecutionTime = 0.02 s  ClockTime = 0 s
+
+Iteration: 12
+
+GAMG:  Solving for T, Initial residual = 0.0571302, Final residual = 0.045837, No Iterations 1
+GAMG:  Solving for Dx, Initial residual = 0.000320822, Final residual = 7.2237e-05, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 0.000242378, Final residual = 5.60294e-05, No Iterations 1
+ExecutionTime = 0.02 s  ClockTime = 0 s
+
+Iteration: 13
+
+GAMG:  Solving for T, Initial residual = 0.0553155, Final residual = 0.0447277, No Iterations 1
+GAMG:  Solving for Dx, Initial residual = 0.00024798, Final residual = 5.66221e-05, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 0.000186804, Final residual = 4.37788e-05, No Iterations 1
+ExecutionTime = 0.02 s  ClockTime = 0 s
+
+Iteration: 14
+
+GAMG:  Solving for T, Initial residual = 0.0505093, Final residual = 0.0449915, No Iterations 1
+GAMG:  Solving for Dx, Initial residual = 0.000194109, Final residual = 4.4618e-05, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 0.000147113, Final residual = 3.56372e-05, No Iterations 1
+ExecutionTime = 0.02 s  ClockTime = 0 s
+
+Iteration: 15
+
+GAMG:  Solving for T, Initial residual = 0.049906, Final residual = 0.0438505, No Iterations 1
+GAMG:  Solving for Dx, Initial residual = 0.000152658, Final residual = 3.51951e-05, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 0.000117984, Final residual = 2.95016e-05, No Iterations 1
+ExecutionTime = 0.02 s  ClockTime = 0 s
+
+Iteration: 16
+
+GAMG:  Solving for T, Initial residual = 0.0482474, Final residual = 0.0453608, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 0.000121195, Final residual = 2.79888e-05, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 9.61834e-05, Final residual = 2.4618e-05, No Iterations 1
+ExecutionTime = 0.1 s  ClockTime = 0 s
+
+Iteration: 17
+
+GAMG:  Solving for T, Initial residual = 0.0469579, Final residual = 0.0438955, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 9.68645e-05, Final residual = 2.23947e-05, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 7.92387e-05, Final residual = 2.06406e-05, No Iterations 1
+ExecutionTime = 0.18 s  ClockTime = 1 s
+
+Iteration: 18
+
+GAMG:  Solving for T, Initial residual = 0.0489482, Final residual = 0.0432848, No Iterations 1
+GAMG:  Solving for Dx, Initial residual = 7.81247e-05, Final residual = 1.80593e-05, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 6.56998e-05, Final residual = 1.73323e-05, No Iterations 1
+ExecutionTime = 0.18 s  ClockTime = 1 s
+
+Iteration: 19
+
+GAMG:  Solving for T, Initial residual = 0.0461107, Final residual = 0.0437049, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 6.35052e-05, Final residual = 1.46675e-05, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 5.48887e-05, Final residual = 1.45699e-05, No Iterations 1
+ExecutionTime = 0.26 s  ClockTime = 1 s
+
+Iteration: 20
+
+GAMG:  Solving for T, Initial residual = 0.0457803, Final residual = 0.0429936, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 5.20373e-05, Final residual = 1.19965e-05, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 4.61221e-05, Final residual = 1.22486e-05, No Iterations 1
+Max sigmaEq = 5.08659e+08
+ExecutionTime = 0.35 s  ClockTime = 1 s
+
+Iteration: 21
+
+GAMG:  Solving for T, Initial residual = 0.0462451, Final residual = 0.0424901, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 4.29456e-05, Final residual = 9.87772e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 3.90145e-05, Final residual = 1.03043e-05, No Iterations 1
+ExecutionTime = 0.42 s  ClockTime = 1 s
+
+Iteration: 22
+
+GAMG:  Solving for T, Initial residual = 0.0447761, Final residual = 0.0428123, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 3.56948e-05, Final residual = 8.19288e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 3.31015e-05, Final residual = 8.68083e-06, No Iterations 1
+ExecutionTime = 0.51 s  ClockTime = 1 s
+
+Iteration: 23
+
+GAMG:  Solving for T, Initial residual = 0.0452771, Final residual = 0.0421546, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 2.98741e-05, Final residual = 6.8456e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 2.81275e-05, Final residual = 7.30982e-06, No Iterations 1
+ExecutionTime = 0.59 s  ClockTime = 1 s
+
+Iteration: 24
+
+GAMG:  Solving for T, Initial residual = 0.0444401, Final residual = 0.0428876, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 2.51702e-05, Final residual = 5.77026e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 2.39479e-05, Final residual = 6.15154e-06, No Iterations 1
+ExecutionTime = 0.67 s  ClockTime = 1 s
+
+Iteration: 25
+
+GAMG:  Solving for T, Initial residual = 0.0442, Final residual = 0.0420768, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 2.13382e-05, Final residual = 4.90428e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 2.04169e-05, Final residual = 5.1763e-06, No Iterations 1
+ExecutionTime = 0.74 s  ClockTime = 1 s
+
+Iteration: 26
+
+GAMG:  Solving for T, Initial residual = 0.044564, Final residual = 0.0422589, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.8201e-05, Final residual = 4.20674e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 1.74355e-05, Final residual = 4.35902e-06, No Iterations 1
+ExecutionTime = 0.82 s  ClockTime = 1 s
+
+Iteration: 27
+
+GAMG:  Solving for T, Initial residual = 0.0435946, Final residual = 0.0426386, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.56198e-05, Final residual = 3.64731e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 1.49405e-05, Final residual = 3.6794e-06, No Iterations 1
+ExecutionTime = 0.9 s  ClockTime = 1 s
+
+Iteration: 28
+
+GAMG:  Solving for T, Initial residual = 0.043412, Final residual = 0.0416984, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.34944e-05, Final residual = 3.20182e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 1.28624e-05, Final residual = 3.13957e-06, No Iterations 1
+ExecutionTime = 0.98 s  ClockTime = 1 s
+
+Iteration: 29
+
+GAMG:  Solving for T, Initial residual = 0.0438081, Final residual = 0.0415323, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.17307e-05, Final residual = 2.85102e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 1.11501e-05, Final residual = 2.71789e-06, No Iterations 1
+ExecutionTime = 1.06 s  ClockTime = 1 s
+
+Iteration: 30
+
+GAMG:  Solving for T, Initial residual = 0.0421789, Final residual = 0.0416115, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.02533e-05, Final residual = 2.56963e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 9.75006e-06, Final residual = 2.39798e-06, No Iterations 1
+ExecutionTime = 1.14 s  ClockTime = 1 s
+
+Iteration: 31
+
+GAMG:  Solving for T, Initial residual = 0.0422482, Final residual = 0.0411166, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 9.01621e-06, Final residual = 2.34169e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 8.59883e-06, Final residual = 2.14677e-06, No Iterations 1
+ExecutionTime = 1.22 s  ClockTime = 2 s
+
+Iteration: 32
+
+GAMG:  Solving for T, Initial residual = 0.0419725, Final residual = 0.0417843, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.97956e-06, Final residual = 2.15497e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 7.67627e-06, Final residual = 1.9556e-06, No Iterations 1
+ExecutionTime = 1.31 s  ClockTime = 2 s
+
+Iteration: 33
+
+GAMG:  Solving for T, Initial residual = 0.0419252, Final residual = 0.0413612, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.11218e-06, Final residual = 2.00339e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 6.90188e-06, Final residual = 1.81517e-06, No Iterations 1
+ExecutionTime = 1.38 s  ClockTime = 2 s
+
+Iteration: 34
+
+GAMG:  Solving for T, Initial residual = 0.0420578, Final residual = 0.0414946, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 6.39771e-06, Final residual = 1.88055e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 6.25796e-06, Final residual = 1.68832e-06, No Iterations 1
+ExecutionTime = 1.46 s  ClockTime = 2 s
+
+Iteration: 35
+
+GAMG:  Solving for T, Initial residual = 0.041651, Final residual = 0.0412758, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 5.80212e-06, Final residual = 1.77724e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 5.70795e-06, Final residual = 1.56292e-06, No Iterations 1
+ExecutionTime = 1.55 s  ClockTime = 2 s
+
+Iteration: 36
+
+GAMG:  Solving for T, Initial residual = 0.0414401, Final residual = 0.0414401, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 5.29741e-06, Final residual = 1.68353e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 5.22707e-06, Final residual = 1.44242e-06, No Iterations 1
+ExecutionTime = 1.63 s  ClockTime = 2 s
+
+Iteration: 37
+
+GAMG:  Solving for T, Initial residual = 0.041409, Final residual = 0.0412217, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 4.87169e-06, Final residual = 1.59566e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 4.806e-06, Final residual = 1.32847e-06, No Iterations 1
+ExecutionTime = 1.7 s  ClockTime = 2 s
+
+Iteration: 38
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 4.50967e-06, Final residual = 1.51037e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 4.42888e-06, Final residual = 1.22203e-06, No Iterations 1
+ExecutionTime = 1.79 s  ClockTime = 2 s
+
+Iteration: 39
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 4.19827e-06, Final residual = 1.42598e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 4.08732e-06, Final residual = 1.12506e-06, No Iterations 1
+ExecutionTime = 1.87 s  ClockTime = 2 s
+
+Iteration: 40
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 3.91564e-06, Final residual = 1.34337e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 3.77555e-06, Final residual = 1.03715e-06, No Iterations 1
+Max sigmaEq = 5.07872e+08
+ExecutionTime = 1.96 s  ClockTime = 2 s
+
+Iteration: 41
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 3.65393e-06, Final residual = 1.26331e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 3.48925e-06, Final residual = 9.57204e-07, No Iterations 1
+ExecutionTime = 2.04 s  ClockTime = 2 s
+
+Iteration: 42
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 3.41192e-06, Final residual = 1.18623e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 3.2263e-06, Final residual = 8.84297e-07, No Iterations 1
+ExecutionTime = 2.12 s  ClockTime = 2 s
+
+Iteration: 43
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 3.18853e-06, Final residual = 1.11252e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 2.98457e-06, Final residual = 8.17858e-07, No Iterations 1
+ExecutionTime = 2.2 s  ClockTime = 3 s
+
+Iteration: 44
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 2.97973e-06, Final residual = 1.04244e-06, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 2.76242e-06, Final residual = 7.5703e-07, No Iterations 1
+ExecutionTime = 2.28 s  ClockTime = 3 s
+
+Iteration: 45
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 2.78461e-06, Final residual = 9.7621e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 2.55817e-06, Final residual = 7.01152e-07, No Iterations 1
+ExecutionTime = 2.37 s  ClockTime = 3 s
+
+Iteration: 46
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 2.60145e-06, Final residual = 9.13754e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 2.37036e-06, Final residual = 6.49869e-07, No Iterations 1
+ExecutionTime = 2.45 s  ClockTime = 3 s
+
+Iteration: 47
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 2.42995e-06, Final residual = 8.54975e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 2.19727e-06, Final residual = 6.02762e-07, No Iterations 1
+ExecutionTime = 2.53 s  ClockTime = 3 s
+
+Iteration: 48
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 2.26918e-06, Final residual = 7.99733e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 2.03823e-06, Final residual = 5.59334e-07, No Iterations 1
+ExecutionTime = 2.61 s  ClockTime = 3 s
+
+Iteration: 49
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 2.11848e-06, Final residual = 7.47883e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 1.89162e-06, Final residual = 5.19322e-07, No Iterations 1
+ExecutionTime = 2.69 s  ClockTime = 3 s
+
+Iteration: 50
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.97856e-06, Final residual = 6.99255e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 1.75614e-06, Final residual = 4.82531e-07, No Iterations 1
+ExecutionTime = 2.76 s  ClockTime = 3 s
+
+Iteration: 51
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.84766e-06, Final residual = 6.5379e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 1.63121e-06, Final residual = 4.48561e-07, No Iterations 1
+ExecutionTime = 2.84 s  ClockTime = 3 s
+
+Iteration: 52
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.72531e-06, Final residual = 6.11348e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 1.51665e-06, Final residual = 4.17164e-07, No Iterations 1
+ExecutionTime = 2.92 s  ClockTime = 3 s
+
+Iteration: 53
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.61114e-06, Final residual = 5.71598e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 1.41067e-06, Final residual = 3.88101e-07, No Iterations 1
+ExecutionTime = 3.02 s  ClockTime = 3 s
+
+Iteration: 54
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.50444e-06, Final residual = 5.34383e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 1.31248e-06, Final residual = 3.61187e-07, No Iterations 1
+ExecutionTime = 3.1 s  ClockTime = 3 s
+
+Iteration: 55
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.40471e-06, Final residual = 4.99557e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 1.22142e-06, Final residual = 3.36269e-07, No Iterations 1
+ExecutionTime = 3.18 s  ClockTime = 4 s
+
+Iteration: 56
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.3116e-06, Final residual = 4.66991e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 1.13703e-06, Final residual = 3.13165e-07, No Iterations 1
+ExecutionTime = 3.27 s  ClockTime = 4 s
+
+Iteration: 57
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.22458e-06, Final residual = 4.36549e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 1.0587e-06, Final residual = 2.91781e-07, No Iterations 1
+ExecutionTime = 3.35 s  ClockTime = 4 s
+
+Iteration: 58
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.14332e-06, Final residual = 4.08077e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 9.85969e-07, Final residual = 9.85969e-07, No Iterations 0
+ExecutionTime = 3.43 s  ClockTime = 4 s
+
+Iteration: 59
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 8.73092e-07, Final residual = 8.73092e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 1.3857e-06, Final residual = 3.46125e-07, No Iterations 1
+ExecutionTime = 3.52 s  ClockTime = 4 s
+
+Iteration: 60
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.19939e-06, Final residual = 4.0861e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 8.32448e-07, Final residual = 8.32448e-07, No Iterations 0
+Max sigmaEq = 5.07738e+08
+ExecutionTime = 3.61 s  ClockTime = 4 s
+
+Iteration: 61
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 8.53652e-07, Final residual = 8.53652e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 1.14575e-06, Final residual = 3.0179e-07, No Iterations 1
+ExecutionTime = 3.7 s  ClockTime = 4 s
+
+Iteration: 62
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.12291e-06, Final residual = 3.92059e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 7.23089e-07, Final residual = 7.23089e-07, No Iterations 0
+ExecutionTime = 3.78 s  ClockTime = 4 s
+
+Iteration: 63
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 8.16084e-07, Final residual = 8.16084e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.99552e-07, Final residual = 9.99552e-07, No Iterations 0
+ExecutionTime = 3.86 s  ClockTime = 4 s
+
+Iteration: 64
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 8.44315e-07, Final residual = 8.44315e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 1.082e-06, Final residual = 2.79125e-07, No Iterations 1
+ExecutionTime = 3.93 s  ClockTime = 4 s
+
+Iteration: 65
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.07897e-06, Final residual = 3.76096e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 6.4051e-07, Final residual = 6.4051e-07, No Iterations 0
+ExecutionTime = 4.02 s  ClockTime = 4 s
+
+Iteration: 66
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.76493e-07, Final residual = 7.76493e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 8.78694e-07, Final residual = 8.78694e-07, No Iterations 0
+ExecutionTime = 4.1 s  ClockTime = 4 s
+
+Iteration: 67
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.953e-07, Final residual = 7.953e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.35641e-07, Final residual = 9.35641e-07, No Iterations 0
+ExecutionTime = 4.18 s  ClockTime = 5 s
+
+Iteration: 68
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 8.11069e-07, Final residual = 8.11069e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.76977e-07, Final residual = 9.76977e-07, No Iterations 0
+ExecutionTime = 4.26 s  ClockTime = 5 s
+
+Iteration: 69
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 8.24272e-07, Final residual = 8.24272e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 1.00523e-06, Final residual = 2.58235e-07, No Iterations 1
+ExecutionTime = 4.34 s  ClockTime = 5 s
+
+Iteration: 70
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 1.02488e-06, Final residual = 3.56314e-07, No Iterations 1
+GAMG:  Solving for Dy, Initial residual = 5.71654e-07, Final residual = 5.71654e-07, No Iterations 0
+ExecutionTime = 4.42 s  ClockTime = 5 s
+
+Iteration: 71
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.31134e-07, Final residual = 7.31134e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 7.76237e-07, Final residual = 7.76237e-07, No Iterations 0
+ExecutionTime = 4.51 s  ClockTime = 5 s
+
+Iteration: 72
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.43437e-07, Final residual = 7.43437e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 8.10307e-07, Final residual = 8.10307e-07, No Iterations 0
+ExecutionTime = 4.6 s  ClockTime = 5 s
+
+Iteration: 73
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.52678e-07, Final residual = 7.52678e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 8.3637e-07, Final residual = 8.3637e-07, No Iterations 0
+ExecutionTime = 4.68 s  ClockTime = 5 s
+
+Iteration: 74
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.60468e-07, Final residual = 7.60468e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 8.54874e-07, Final residual = 8.54874e-07, No Iterations 0
+ExecutionTime = 4.77 s  ClockTime = 5 s
+
+Iteration: 75
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.66313e-07, Final residual = 7.66313e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 8.67968e-07, Final residual = 8.67968e-07, No Iterations 0
+ExecutionTime = 4.86 s  ClockTime = 5 s
+
+Iteration: 76
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.70869e-07, Final residual = 7.70869e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 8.77274e-07, Final residual = 8.77274e-07, No Iterations 0
+ExecutionTime = 4.94 s  ClockTime = 5 s
+
+Iteration: 77
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.74491e-07, Final residual = 7.74491e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 8.84006e-07, Final residual = 8.84006e-07, No Iterations 0
+ExecutionTime = 5.02 s  ClockTime = 5 s
+
+Iteration: 78
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.7747e-07, Final residual = 7.7747e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 8.88968e-07, Final residual = 8.88968e-07, No Iterations 0
+ExecutionTime = 5.11 s  ClockTime = 5 s
+
+Iteration: 79
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.79883e-07, Final residual = 7.79883e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 8.92671e-07, Final residual = 8.92671e-07, No Iterations 0
+ExecutionTime = 5.19 s  ClockTime = 6 s
+
+Iteration: 80
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.81868e-07, Final residual = 7.81868e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 8.95494e-07, Final residual = 8.95494e-07, No Iterations 0
+Max sigmaEq = 5.07727e+08
+ExecutionTime = 5.28 s  ClockTime = 6 s
+
+Iteration: 81
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.83525e-07, Final residual = 7.83525e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 8.97697e-07, Final residual = 8.97697e-07, No Iterations 0
+ExecutionTime = 5.37 s  ClockTime = 6 s
+
+Iteration: 82
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.84926e-07, Final residual = 7.84926e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 8.99452e-07, Final residual = 8.99452e-07, No Iterations 0
+ExecutionTime = 5.46 s  ClockTime = 6 s
+
+Iteration: 83
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.86124e-07, Final residual = 7.86124e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.0088e-07, Final residual = 9.0088e-07, No Iterations 0
+ExecutionTime = 5.53 s  ClockTime = 6 s
+
+Iteration: 84
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.87155e-07, Final residual = 7.87155e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.02061e-07, Final residual = 9.02061e-07, No Iterations 0
+ExecutionTime = 5.61 s  ClockTime = 6 s
+
+Iteration: 85
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.88049e-07, Final residual = 7.88049e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.03052e-07, Final residual = 9.03052e-07, No Iterations 0
+ExecutionTime = 5.71 s  ClockTime = 6 s
+
+Iteration: 86
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.88828e-07, Final residual = 7.88828e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.03894e-07, Final residual = 9.03894e-07, No Iterations 0
+ExecutionTime = 5.79 s  ClockTime = 6 s
+
+Iteration: 87
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.89508e-07, Final residual = 7.89508e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.04616e-07, Final residual = 9.04616e-07, No Iterations 0
+ExecutionTime = 5.87 s  ClockTime = 6 s
+
+Iteration: 88
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.90105e-07, Final residual = 7.90105e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.05239e-07, Final residual = 9.05239e-07, No Iterations 0
+ExecutionTime = 5.95 s  ClockTime = 6 s
+
+Iteration: 89
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.90629e-07, Final residual = 7.90629e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.0578e-07, Final residual = 9.0578e-07, No Iterations 0
+ExecutionTime = 6.03 s  ClockTime = 6 s
+
+Iteration: 90
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.91089e-07, Final residual = 7.91089e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.06252e-07, Final residual = 9.06252e-07, No Iterations 0
+ExecutionTime = 6.11 s  ClockTime = 7 s
+
+Iteration: 91
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.91495e-07, Final residual = 7.91495e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.06665e-07, Final residual = 9.06665e-07, No Iterations 0
+ExecutionTime = 6.19 s  ClockTime = 7 s
+
+Iteration: 92
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.91852e-07, Final residual = 7.91852e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.07027e-07, Final residual = 9.07027e-07, No Iterations 0
+ExecutionTime = 6.27 s  ClockTime = 7 s
+
+Iteration: 93
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.92168e-07, Final residual = 7.92168e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.07345e-07, Final residual = 9.07345e-07, No Iterations 0
+ExecutionTime = 6.35 s  ClockTime = 7 s
+
+Iteration: 94
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.92446e-07, Final residual = 7.92446e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.07626e-07, Final residual = 9.07626e-07, No Iterations 0
+ExecutionTime = 6.43 s  ClockTime = 7 s
+
+Iteration: 95
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.92691e-07, Final residual = 7.92691e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.07872e-07, Final residual = 9.07872e-07, No Iterations 0
+ExecutionTime = 6.52 s  ClockTime = 7 s
+
+Iteration: 96
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.92908e-07, Final residual = 7.92908e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.0809e-07, Final residual = 9.0809e-07, No Iterations 0
+ExecutionTime = 6.6 s  ClockTime = 7 s
+
+Iteration: 97
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.93099e-07, Final residual = 7.93099e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.08282e-07, Final residual = 9.08282e-07, No Iterations 0
+ExecutionTime = 6.67 s  ClockTime = 7 s
+
+Iteration: 98
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.93268e-07, Final residual = 7.93268e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.08451e-07, Final residual = 9.08451e-07, No Iterations 0
+ExecutionTime = 6.75 s  ClockTime = 7 s
+
+Iteration: 99
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.93417e-07, Final residual = 7.93417e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.086e-07, Final residual = 9.086e-07, No Iterations 0
+ExecutionTime = 6.84 s  ClockTime = 7 s
+
+Iteration: 100
+
+GAMG:  Solving for T, Initial residual = 0.0413935, Final residual = 0.0413935, No Iterations 1000
+GAMG:  Solving for Dx, Initial residual = 7.93549e-07, Final residual = 7.93549e-07, No Iterations 0
+GAMG:  Solving for Dy, Initial residual = 9.08732e-07, Final residual = 9.08732e-07, No Iterations 0
+Max sigmaEq = 5.07727e+08
+ExecutionTime = 6.92 s  ClockTime = 7 s
+
+End
+

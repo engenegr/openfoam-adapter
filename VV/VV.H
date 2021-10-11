@@ -12,7 +12,7 @@ namespace preciceAdapter
 namespace VV
 {
 
-class VVSolver
+class VolumeVolume
 {
 
 protected:
@@ -43,7 +43,7 @@ protected:
 public:
 
     //- Constructor
-    VVSolver(const Foam::fvMesh& mesh);
+    VolumeVolume(const Foam::fvMesh& mesh);
 
     //- Configure
     bool configure(const IOdictionary& adapterConfig);

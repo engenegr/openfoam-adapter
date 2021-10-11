@@ -4,7 +4,7 @@
 
 using namespace Foam;
 
-preciceAdapter::VV::VVSolver::VVSolver
+preciceAdapter::VV::VolumeVolume::VolumeVolume
 (
     const Foam::fvMesh& mesh
 )
@@ -12,7 +12,7 @@ preciceAdapter::VV::VVSolver::VVSolver
 mesh_(mesh)
 {}
 
-bool preciceAdapter::VV::VVSolver::configure(const IOdictionary& adapterConfig)
+bool preciceAdapter::VV::VolumeVolume::configure(const IOdictionary& adapterConfig)
 {
     DEBUG(adapterInfo("Configuring the Volume-Volume module..."));
 
@@ -49,7 +49,7 @@ bool preciceAdapter::VV::VVSolver::configure(const IOdictionary& adapterConfig)
     return true;
 }
 
-bool preciceAdapter::VV::VVSolver::readConfig(const IOdictionary& adapterConfig)
+bool preciceAdapter::VV::VolumeVolume::readConfig(const IOdictionary& adapterConfig)
 {
     const dictionary VVdict = adapterConfig.subOrEmptyDict("VV");
 
@@ -72,7 +72,7 @@ bool preciceAdapter::VV::VVSolver::readConfig(const IOdictionary& adapterConfig)
     return true;
 }
 
-std::string preciceAdapter::VV::VVSolver::determineSolverType()
+std::string preciceAdapter::VV::VolumeVolume::determineSolverType()
 {
     // NOTE: When coupling a different variable, you may want to
     // add more cases here. Or you may provide the solverType in the config.
@@ -111,7 +111,7 @@ std::string preciceAdapter::VV::VVSolver::determineSolverType()
     return solverType;
 }
 
-void preciceAdapter::VV::VVSolver::addWriters(std::string dataName, Interface * interface)
+void preciceAdapter::VV::VolumeVolume::addWriters(std::string dataName, Interface * interface)
 {
     if (dataName.find("Temperature") == 0)
     {
@@ -134,7 +134,7 @@ void preciceAdapter::VV::VVSolver::addWriters(std::string dataName, Interface * 
     // the one provided in the adapter's configuration file.
 }
 
-void preciceAdapter::VV::VVSolver::addReaders(std::string dataName, Interface * interface)
+void preciceAdapter::VV::VolumeVolume::addReaders(std::string dataName, Interface * interface)
 {
 
     if (dataName.find("Temperature") == 0)

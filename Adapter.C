@@ -52,17 +52,47 @@ bool preciceAdapter::Adapter::configFileRead()
             DEBUG(adapterInfo("  - " + module + "\n"));
 
             // Set the modules switches
+            // Create your module and read any options specific to it here
+
             if (module == "CHT")
             {
                 CHTenabled_ = true;
+                // If the CHT module is enabled, create it, read the
+                // CHT-specific options and configure it.
+                CHT_ = new CHT::ConjugateHeatTransfer(mesh_);
+                if (!CHT_->configure(preciceDict))
+                {
+                    return false;
+                }
             }
             if (module == "FSI")
             {
                 FSIenabled_ = true;
+                // If the FSI module is enabled, create it, read the
+                // FSI-specific options and configure it.
+                FSI_ = new FSI::FluidStructureInteraction(mesh_, runTime_);
+                if (!FSI_->configure(preciceDict))
+                {
+                    return false;
+                }
             }
             if (module == "FF")
             {
                 FFenabled_ = true;
+                FF_ = new FF::FluidFluid(mesh_);
+                if (!FF_->configure(preciceDict))
+                {
+                    return false;
+                }
+            }
+            if (module == "VV")
+            {
+                VVenabled_ = true;
+                VV_ = new VV::VolumeVolume(mesh_);
+                if (!VV_->configure(preciceDict))
+                {
+                    return false;
+                }
             }
         }
 
@@ -79,27 +109,26 @@ bool preciceAdapter::Adapter::configFileRead()
             adapterInfo("  Empty list of interfaces", "warning");
             return false;
         }
-        else
-        {
-            for (const entry& interfaceDictEntry : *interfaceDictPtr)
-            {
-                if (interfaceDictEntry.isDict())
+        for (const entry &interfaceDictEntry: *interfaceDictPtr) {
+            if (interfaceDictEntry.isDict()) {
+                dictionary interfaceDict = interfaceDictEntry.dict();
+                struct InterfaceConfig interfaceConfig;
+
+                interfaceConfig.meshName = static_cast<word>(interfaceDict.lookup("mesh"));
+                DEBUG(adapterInfo("  - mesh         : " + interfaceConfig.meshName));
+
+                if ((CHTenabled_ || FSIenabled_ || FFenabled_) && !VVenabled_) // NOTE: Add your new switch here
                 {
-                    dictionary interfaceDict = interfaceDictEntry.dict();
-                    struct InterfaceConfig interfaceConfig;
-
-                    interfaceConfig.meshName = static_cast<word>(interfaceDict.lookup("mesh"));
-                    DEBUG(adapterInfo("  - mesh         : " + interfaceConfig.meshName));
-
                     // By default, assume "faceCenters" as locationsType
                     interfaceConfig.locationsType = interfaceDict.lookupOrDefault<word>("locations", "faceCenters");
                     DEBUG(adapterInfo("    locations    : " + interfaceConfig.locationsType));
 
                     // By default, assume that no mesh connectivity is required (i.e. no nearest-projection mapping)
                     interfaceConfig.meshConnectivity = interfaceDict.lookupOrDefault<bool>("connectivity", false);
+
                     // Mesh connectivity only makes sense in case of faceNodes, check and raise a warning otherwise
-                    if (interfaceConfig.meshConnectivity && interfaceConfig.locationsType == "faceCenters")
-                    {
+
+                    if (interfaceConfig.meshConnectivity && interfaceConfig.locationsType == "faceCenters") {
                         DEBUG(adapterInfo("Mesh connectivity is not supported for faceCenters. \n"
                                           "Please configure the desired interface with the locationsType faceNodes. \n"
                                           "Have a look in the adapter documentation for detailed information.",
@@ -110,83 +139,47 @@ bool preciceAdapter::Adapter::configFileRead()
 
                     DEBUG(adapterInfo("    patches      : "));
                     auto patches = static_cast<wordList>(interfaceDict.lookup("patches"));
-                    for (auto patch : patches)
-                    {
+                    for (auto patch: patches) {
                         interfaceConfig.patchNames.push_back(patch);
                         DEBUG(adapterInfo("      - " + patch));
                     }
-
-                    DEBUG(adapterInfo("    writeData    : "));
-                    auto writeData = static_cast<wordList>(interfaceDict.lookup("writeData"));
-                    for (auto writeDatum : writeData)
-                    {
-                        interfaceConfig.writeData.push_back(writeDatum);
-                        DEBUG(adapterInfo("      - " + writeDatum));
-                    }
-
-                    DEBUG(adapterInfo("    readData     : "));
-                    auto readData = static_cast<wordList>(interfaceDict.lookup("readData"));
-                    for (auto readDatum : readData)
-                    {
-                        interfaceConfig.readData.push_back(readDatum);
-                        DEBUG(adapterInfo("      - " + readDatum));
-                    }
-                    interfacesConfig_.push_back(interfaceConfig);
+                } else {
+                    interfaceConfig.locationsType = interfaceDict.lookupOrDefault<word>("locations", "cellCentres");
+                    DEBUG(adapterInfo("    locations    : " + interfaceConfig.locationsType));
+                    interfaceConfig.meshConnectivity = false;
+                    interfaceConfig.patchNames.push_back("domain");
                 }
-            }
-        }
 
-        // NOTE: set the switch for your new module here
+                DEBUG(adapterInfo("    writeData    : "));
+                auto writeData = static_cast<wordList>(interfaceDict.lookup("writeData"));
+                for (auto writeDatum: writeData) {
+                    interfaceConfig.writeData.push_back(writeDatum);
+                    DEBUG(adapterInfo("      - " + writeDatum));
+                }
 
-        // If the CHT module is enabled, create it, read the
-        // CHT-specific options and configure it.
-        if (CHTenabled_)
-        {
-            CHT_ = new CHT::ConjugateHeatTransfer(mesh_);
-            if (!CHT_->configure(preciceDict))
-            {
-                return false;
-            }
-        }
+                DEBUG(adapterInfo("    readData     : "));
+                auto readData = static_cast<wordList>(interfaceDict.lookup("readData"));
+                for (auto readDatum: readData) {
+                    interfaceConfig.readData.push_back(readDatum);
+                    DEBUG(adapterInfo("      - " + readDatum));
+                }
 
-        // If the FSI module is enabled, create it, read the
-        // FSI-specific options and configure it.
-        if (FSIenabled_)
-        {
-            // Check for unsupported FSI with meshConnectivity
-            for (uint i = 0; i < interfacesConfig_.size(); i++)
-            {
-                if (interfacesConfig_.at(i).meshConnectivity == true)
+                // Check for unsupported FSI with meshConnectivity
+                if (FSIenabled_ && interfaceConfig.meshConnectivity)
                 {
                     adapterInfo(
-                        "Mesh connectivity is not supported for FSI, as, usually, "
-                        "the Solid participant needs to provide the connectivity information. "
-                        "Therefore, set provideMeshConnectivity = false. "
-                        "Have a look in the adapter documentation for more information. ",
-                        "warning");
+                            "Mesh connectivity is not supported for FSI, as, usually, "
+                            "the Solid participant needs to provide the connectivity information. "
+                            "Therefore, set provideMeshConnectivity = false. "
+                            "Have a look in the adapter documentation for more information. ",
+                            "warning");
                     return false;
                 }
-            }
-
-            FSI_ = new FSI::FluidStructureInteraction(mesh_, runTime_);
-            if (!FSI_->configure(preciceDict))
-            {
-                return false;
+                interfacesConfig_.push_back(interfaceConfig);
             }
         }
 
-        if (FFenabled_)
-        {
-            FF_ = new FF::FluidFluid(mesh_);
-            if (!FF_->configure(preciceDict))
-            {
-                return false;
-            }
-        }
-
-        // NOTE: Create your module and read any options specific to it here
-
-        if (!CHTenabled_ && !FSIenabled_ && !FFenabled_) // NOTE: Add your new switch here
+        if (!CHTenabled_ && !FSIenabled_ && !FFenabled_ && !VVenabled_) // NOTE: Add your new switch here
         {
             adapterInfo("No module is enabled.", "error-deferred");
             return false;
@@ -275,6 +268,11 @@ void preciceAdapter::Adapter::configure()
                     FF_->addWriters(dataName, interface);
                 }
 
+                // Add VV-related coupling data writers
+                if (VVenabled_)
+                {
+                    VV_->addWriters(dataName, interface);
+                }
                 // NOTE: Add any coupling data writers for your module here.
             } // end add coupling data writers
 
@@ -299,6 +297,12 @@ void preciceAdapter::Adapter::configure()
                 if (FFenabled_)
                 {
                     FF_->addReaders(dataName, interface);
+                }
+
+                // Add VV-related coupling data writers
+                if (VVenabled_)
+                {
+                    VV_->addReaders(dataName, interface);
                 }
 
                 // NOTE: Add any coupling data readers for your module here.
@@ -1811,6 +1815,13 @@ void preciceAdapter::Adapter::teardown()
         FF_ = NULL;
     }
 
+    // Delete the VV module
+    if (NULL != VV_)
+    {
+        DEBUG(adapterInfo("Destroying the VV module..."));
+        delete VV_;
+        VV_ = NULL;
+    }
     // NOTE: Delete your new module here
 
     return;

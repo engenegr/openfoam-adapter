@@ -1,0 +1,78 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : dev-28745eca4bfb
+Exec   : postProcess -func singleGraph
+Date   : Oct 07 2021
+Time   : 17:05:08
+Host   : "e7270"
+PID    : 1381830
+I/O    : uncollated
+Case   : /home/ilya/Code/Cpp/openfoam-adapter/tutorials/VV/reference
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading set description:
+    line
+
+Reading set description:
+    line
+
+Time = 0
+
+Reading fields:
+
+Executing functionObjects
+--> FOAM Warning : 
+    From function Foam::label Foam::sampledSets::classifyFields()
+    in file sampledSet/sampledSets/sampledSetsGrouping.C at line 140
+    Cannot find registered field matching sigmaxx
+
+Time = 20
+
+Reading fields:
+    volScalarFields: sigmaxx
+
+Executing functionObjects
+
+Time = 40
+
+Reading fields:
+    volScalarFields: sigmaxx
+
+Executing functionObjects
+
+Time = 60
+
+Reading fields:
+    volScalarFields: sigmaxx
+
+Executing functionObjects
+
+Time = 80
+
+Reading fields:
+    volScalarFields: sigmaxx
+
+Executing functionObjects
+
+Time = 100
+
+Reading fields:
+    volScalarFields: sigmaxx
+
+Executing functionObjects
+
+End
+

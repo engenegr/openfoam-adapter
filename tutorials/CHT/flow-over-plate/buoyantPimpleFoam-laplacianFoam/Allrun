@@ -2,7 +2,7 @@
 
 # This script prepares and runs all the participants in one terminal,
 # forwarding the solvers' output to log files.
-# Alternatively, you may execute the scripts "runSolid" and "runFluid"
+# Alternatively, you may execute the scripts "runStress" and "runThermo"
 # in separate terminals.
 
 # The script "Allclean" cleans-up the result and log files.
