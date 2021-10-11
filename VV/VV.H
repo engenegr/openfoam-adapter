@@ -34,9 +34,6 @@ protected:
 
 protected:
 
-    //- Determine the solver type
-    std::string determineSolverType();
-
     //- Read the VV-related options from the adapter's configuration file
     bool readConfig(const IOdictionary& adapterConfig);
 

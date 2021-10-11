@@ -22,30 +22,6 @@ bool preciceAdapter::VV::VolumeVolume::configure(const IOdictionary& adapterConf
         return false;
     }
 
-    // NOTE: If you want to add a new solver type, which you can manually
-    // specify in the configuration, add it here. See also the methods
-    // addWriters() and addReaders().
-    // Check the solver type and determine it if needed
-    cout << "SolverType: |" << solverType_ << "|" << endl;
-    if (
-        solverType_.compare("compressible") == 0 ||
-        solverType_.compare("incompressible") == 0 ||
-        solverType_.compare("basic") == 0
-    )
-    {
-        DEBUG(adapterInfo("Known solver type: " + solverType_));
-    }
-    else if (solverType_.compare("none") == 0)
-    {
-        DEBUG(adapterInfo("Determining the solver type..."));
-        solverType_ = determineSolverType();
-    }
-    else
-    {
-        DEBUG(adapterInfo("Unknown solver type. Determining the solver type..."));
-        solverType_ = determineSolverType();
-    }
-
     return true;
 }
 
@@ -70,45 +46,6 @@ bool preciceAdapter::VV::VolumeVolume::readConfig(const IOdictionary& adapterCon
     DEBUG(adapterInfo("    transportProperties name : " + nameTransportProperties_));
 
     return true;
-}
-
-std::string preciceAdapter::VV::VolumeVolume::determineSolverType()
-{
-    // NOTE: When coupling a different variable, you may want to
-    // add more cases here. Or you may provide the solverType in the config.
-
-    std::string solverType;
-
-    // Determine the solver type: Compressible, Incompressible or Basic.
-    // Look for the files transportProperties
-    bool transportPropertiesExists = false;
-
-    if (mesh_.foundObject<IOdictionary>(nameTransportProperties_))
-    {
-        transportPropertiesExists = true;
-        DEBUG(adapterInfo("Found the transportProperties dictionary."));
-    }
-    else
-    {
-        DEBUG(adapterInfo("Did not find the transportProperties dictionary."));
-    }
-
-    if (transportPropertiesExists)
-    {
-        solverType = "basic";
-        DEBUG(adapterInfo("This is a basic solver, as transport properties "
-        "are provided, while turbulence or transport properties are not "
-        "provided."));
-    }
-    else
-    {
-        adapterInfo("Could not determine the solver type, or this is not a "
-        "compatible solver: neither transport, nor turbulence properties "
-        "are provided.",
-        "error");
-    }
-
-    return solverType;
 }
 
 void preciceAdapter::VV::VolumeVolume::addWriters(std::string dataName, Interface * interface)

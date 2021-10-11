@@ -21,15 +21,6 @@ void preciceAdapter::VV::Temperature::write(double* buffer, bool meshConnectivit
 
     const volScalarField & Temprtr_ = *T_;
 
-    // For every cell of the mesh
-    forAll(Temprtr_, i)
-    {
-        // Copy the temperature into the buffer
-        buffer[bufferIndex++]
-                =
-                Temprtr_[i];
-    }
-
     for (uint j = 0; j < patchIDs_.size(); j++ )
     {
         int patchID = patchIDs_.at(j);
@@ -43,6 +34,15 @@ void preciceAdapter::VV::Temperature::write(double* buffer, bool meshConnectivit
                     T_->boundaryFieldRef()[patchID][i];
         }
     }
+
+    // For every cell of the mesh
+    forAll(Temprtr_, i)
+    {
+        // Copy the temperature into the buffer
+        buffer[bufferIndex++]
+                =
+                Temprtr_[i];
+    }
 }
 
 
@@ -51,17 +51,6 @@ void preciceAdapter::VV::Temperature::read(double* buffer, const unsigned int di
     int bufferIndex = 0;
 
     volScalarField &Temprtr_ = *T_;
-
-    // For every cell of the mesh
-    forAll(Temprtr_, i)
-    {
-        // Set the temperature as the buffer value
-        Temprtr_[i]
-                =
-                buffer[bufferIndex++];
-    }
-    *T_ = Temprtr_;
-
 
     for (uint j = 0; j < patchIDs_.size(); j++ )
     {
@@ -76,4 +65,15 @@ void preciceAdapter::VV::Temperature::read(double* buffer, const unsigned int di
                     buffer[bufferIndex++];
         }
     }
+
+    // For every cell of the mesh
+    forAll(Temprtr_, i)
+    {
+        // Set the temperature as the buffer value
+        Temprtr_[i]
+                =
+                buffer[bufferIndex++];
+    }
+    //*T_ = Temprtr_;
+
 }
